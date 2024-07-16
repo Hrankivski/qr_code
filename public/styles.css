@@ -1,0 +1,70 @@
+/* Basic reset for padding, margin, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: #102a43;
+    margin-bottom: 20px;
+}
+
+/* Styling the file input and scan button */
+input[type="file"] {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 300px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    display: block;
+}
+
+button {
+    background-color: #4c7ef3;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #365df0;
+}
+
+/* Styling the result display area */
+#qrResult {
+    margin-top: 20px;
+    padding: 10px;
+    width: 300px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+/* Styling links to make them more noticeable */
+#qrResult a {
+    color: #3182ce;
+    text-decoration: none;
+}
+
+#qrResult a:hover {
+    text-decoration: underline;
+}
