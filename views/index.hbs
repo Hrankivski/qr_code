@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>QR Code Scanner</title>
+</head>
+<body>
+    <div id="topBar">
+        <div id="historyToggle">
+            <a href="/history">History</a>
+        </div>
+        <div id="accountInfo">
+            <a href="/login">Log In</a>
+            <a href="/signup">Sign Up</a>
+            <form action="/logout" method="POST">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+    </div>
+    <div id="historyPanel">
+        <ul id="historyList"></ul>
+    </div>
+    <div id="mainContent">
+        <h1>QR Code Scanner</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*"/>
+        <button type="submit">Scan QR Code</button>
+    </form>
+    {{#if result}}
+        <p id="qrResult">Result: {{result}}</p>
+    {{else}}
+        <p id="qrResult">Result will appear here...</p>
+    {{/if}}
+    </div>
+</body>
+</html>

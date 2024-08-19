@@ -10,27 +10,54 @@ body {
     background-color: #f4f4f9;
     color: #333;
     line-height: 1.6;
-    padding: 20px;
-    height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    height: 100vh;
 }
 
-h1 {
-    color: #102a43;
+#topBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+#accountInfo a {
+    color: #4c7ef3;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#accountInfo a:hover {
+    text-decoration: underline;
+}
+
+#historyPanel {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px;
+    box-sizing: border-box;
+    height: calc(100% - 50px);
+}
+
+#historyList {
+    list-style-type: none;
+    padding: 0;
+}
+
+h1, input[type="file"], button, p {
     margin-bottom: 20px;
-}
-
-/* Styling the file input and scan button */
-input[type="file"] {
-    margin-bottom: 10px;
-    padding: 8px;
-    width: 300px;
-    border-radius: 5px;
-    border: 2px solid #ccc;
-    display: block;
 }
 
 button {
@@ -48,9 +75,7 @@ button:hover {
     background-color: #365df0;
 }
 
-/* Styling the result display area */
 #qrResult {
-    margin-top: 20px;
     padding: 10px;
     width: 300px;
     text-align: center;
@@ -59,12 +84,111 @@ button:hover {
     border-radius: 5px;
 }
 
-/* Styling links to make them more noticeable */
-#qrResult a {
+.auth-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.auth-container h2 {
+    color: #102a43;
+    margin-bottom: 20px;
+}
+
+.auth-container form {
+    width: 100%;
+}
+
+.auth-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="email"],
+.auth-container input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.auth-container button {
+    background-color: #4c7ef3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.auth-container button:hover {
+    background-color: #365df0;
+}
+
+.auth-container p {
+    margin-top: 20px;
+}
+
+.auth-container a {
     color: #3182ce;
     text-decoration: none;
 }
 
-#qrResult a:hover {
+.auth-container a:hover {
     text-decoration: underline;
+}
+
+/* History Table Styling */
+.history-table {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 50px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.history-table th,
+.history-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.history-table th {
+    background-color: #4c7ef3; /* Blue header */
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.history-table td {
+    color: #333;
+    font-size: 14px;
+}
+
+/* Zebra striping for better readability */
+.history-table tr:nth-child(even) {
+    background-color: #f4f4f9;
+}
+
+/* Adjusting top padding to ensure proper spacing */
+#mainContent {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
